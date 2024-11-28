@@ -19,6 +19,13 @@ function linkedList(){
         return list;
     }
 
+    let prepend = (value) => {
+        let new_node = node();
+        new_node.set_value(value);
+        new_node.set_next(list);
+        return new_node;
+    }
+
     return {list, append};
 }
 
