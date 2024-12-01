@@ -3,7 +3,7 @@ console.log(l1);
 l1 = linkedList(l1).append("abcdefg");
 l1 = linkedList(l1).append("hijklmn");
 l1 = linkedList(l1).append("hijklmnopqrstuvw");
-// l1 = linkedList(l1).prepend("prepend value");
+l1 = linkedList(l1).prepend("prepend value");
 console.log(l1);
 
 // console.log(linkedList().list);
