@@ -237,8 +237,20 @@ class linkedList{
                 n = new_node;
                 return this.head;
             }
+            n = n.next;
+            count++;
         }
         return this.head;
+    }
+
+    removeAt(i){
+        let n = this.head;
+        let count = 0;
+        while(n !== null){
+            if(count == i){
+                
+            }
+        }
     }
 }
 
