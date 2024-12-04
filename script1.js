@@ -166,6 +166,80 @@ class linkedList{
         }
         return n;
     }
+
+    at_index(i){
+        let n = this.head;
+        let count = 0;
+        while(n !== null){
+            if(i == count){
+                return n;
+            }
+            n = n.next;
+            count++;
+        }
+        return null;
+    }
+
+    pop(){
+        let n = this.head;
+        while(n.next.next !== null){
+            n = n.next;
+        }
+        let pop_node = n.next;
+        n.next = null;
+        console.log(this.head);
+        console.log(pop_node);
+        return pop_node;
+    }
+
+    contains(v){
+        let n = this.head;
+        while(n !== null){
+            if(n.value == v){
+                return true;
+            }
+            n = n.next;
+        }
+        return false;
+    }
+
+    find(v){
+        let n = this.head;
+        let count = 0;
+        while(n !== null){
+            if(n.value == v){
+                return count;
+            }
+            n = n.next;
+            count++;
+        }
+        return null;
+    }
+
+    to_string(){
+        let n = this.head;
+        let sentence = "";
+        while(n != null){
+            sentence += "(" + n.value + ") -> ";
+            n = n.next;
+        }
+        sentence += null;
+        
+        return sentence;
+    }
+
+    insertAt(v,i){
+        let n = this.head;
+        let count = 0;
+        while(n !== null){
+            if(count == i){
+                let new_node = node(v, n.next);
+                n = new_node;
+                return this.head;
+            }
+        }
+        return this.head;
+    }
 }
 
 let l1 = new linkedList();
@@ -190,3 +264,17 @@ l1.prepend("prepend2");
 console.log(l1.size());
 console.log(l1.view_head());
 console.log(l1.view_tail());
+console.log(l1.at_index(0));
+console.log(l1.at_index(1));
+console.log(l1.at_index(2));
+console.log(l1.at_index(20));
+l1.pop();
+console.log(l1.contains("l4"));
+console.log(l1.contains("prepend2"));
+console.log(l1.contains("fhfbhdgbhjdbh"));
+console.log(l1.find("prepend2"));
+console.log(l1.find("l4"));
+console.log(l1.find("jdgjdngjdngdgbjdgjdgdsgnjsjbfbn"));
+console.log(l1.to_string());
+let l22222 = new linkedList();
+console.log(l22222.to_string());
